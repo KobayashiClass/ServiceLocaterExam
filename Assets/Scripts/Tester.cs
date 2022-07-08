@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -24,11 +24,11 @@ public class Tester : MonoBehaviour
             result = result && ServiceLocater.Instance.GetInstance<int>() == ts1;
 
             if (!result) throw new Exception();
-            Debug.Log("[Step1] OK‚Å‚·I");
+            Debug.Log("[Step1] OKã§ã™ï¼");
         }
         catch
         {
-            Debug.LogWarning("[Step1] Regist<T>‚ÆGetInstance<T>‚ğŒ©’¼‚»‚¤I");
+            Debug.LogWarning("[Step1] Regist<T>ã¨GetInstance<T>ã‚’è¦‹ç›´ãã†ï¼");
             return;
         }
 
@@ -40,31 +40,33 @@ public class Tester : MonoBehaviour
             ServiceLocater.Instance.Regist<IC2>(ts);
 
             if (ret != ts) throw new Exception();
-            Debug.Log("[Step2] OK‚Å‚·I");
+            Debug.Log("[Step2] OKã§ã™ï¼");
         }
         catch
         {
-            Debug.LogWarning("[Step2] RequestInstance<T>‚ğŒ©’¼‚»‚¤I [Hint]: ƒ‰ƒ€ƒ_®‚àƒLƒƒƒbƒVƒ…‚·‚é•K—v‚ª‚ ‚é‚Ì‚ÅƒtƒB[ƒ‹ƒh‚ğ‘‚â‚»‚¤I");
+            Debug.LogWarning("[Step2] RequestInstance<T>ã‚’è¦‹ç›´ãã†ï¼ [Hint]: ãƒ©ãƒ ãƒ€å¼ã‚‚ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã™ã‚‹å¿…è¦ãŒã‚ã‚‹ã®ã§ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚„Regist<T>ã®å‡¦ç†ã‚’å¢—ã‚„ãã†ï¼");
             return;
         }
 
-        try
+        async Task Ex3()
         {
-            Class3 ts = new Class3();
-            async Task Get()
+            try
             {
-                IC3 ret = await ServiceLocater.Instance.GetInstanceAsync<IC3>();
+                Class3 ts = new Class3();
+                var task = ServiceLocater.Instance.GetInstanceAsync<IC3>();
+                ServiceLocater.Instance.Regist<IC3>(ts);
+                IC3 ret = await task;
                 if (ret != ts) throw new Exception();
-                Debug.Log("[Step3] OK‚Å‚·I");
+                Debug.Log("[Step3] OKã§ã™ï¼");
             }
-            Get();
-            ServiceLocater.Instance.Regist<IC3>(ts);
+            catch
+            {
+                Debug.LogWarning("[Step3] GetInstanceAsync<T>ã‚’è¦‹ç›´ãã†ï¼ [Hint]: éåŒæœŸã¯é›£ã—ã„ã€èª¿ã¹ã¦ã¿ã‚ˆã†ï¼");
+                return;
+            }
         }
-        catch
-        {
-            Debug.LogWarning("[Step3] GetInstanceAsync<T>‚ğŒ©’¼‚»‚¤I [Hint]: ”ñ“¯Šú‚Í“ï‚µ‚¢A’²‚×‚Ä‚İ‚æ‚¤I");
-            return;
-        }
+
+        Ex3();
     }
 
     private interface IC1 { }
