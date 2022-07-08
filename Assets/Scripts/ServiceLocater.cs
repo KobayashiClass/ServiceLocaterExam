@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using UnityEngine;
 
-// ‚±‚ÌƒNƒ‰ƒX‚ğŠ®¬‚³‚¹‚æ‚¤I
+// ã“ã®ã‚¯ãƒ©ã‚¹ã‚’å®Œæˆã•ã›ã‚ˆã†ï¼
 public class ServiceLocater
 {
     private ServiceLocater()
@@ -15,24 +15,24 @@ public class ServiceLocater
 
     public void Regist<T>(T instance)
     {
-        throw new System.Exception("Œ^‚ÆƒCƒ“ƒXƒ^ƒ“ƒX‚ğ“o˜^‚µ‚æ‚¤I");
+        throw new System.Exception("å‹ã¨ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç™»éŒ²ã—ã‚ˆã†ï¼");
     }
 
     public T GetInstance<T>()
     {
-        throw new System.Exception("Œ^‚É‚ ‚Á‚½ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ•Ô‚»‚¤I–³‚©‚Á‚½‚çnull‚ğ•Ô‚»‚¤I");
+        throw new System.Exception("å‹ã«ã‚ã£ãŸã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¿”ãã†ï¼ç„¡ã‹ã£ãŸã‚‰nullã‚’è¿”ãã†ï¼");
     }
 
     public void RequestInstance<T>(System.Action<T> callback)
     {
-        // T ‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ªæ‚É Regist ‚³‚ê‚Ä‚¢‚é‚Æ‚ÍŒÀ‚ç‚È‚¢
-        // Regist ‚³‚ê‚½‚ç callback‚ğŒÄ‚Ôƒƒ\ƒbƒh‚ğì‚ë‚¤I
-        throw new System.Exception("—]—T‚ª‚ ‚Á‚½‚ç‡@ T ƒCƒ“ƒXƒ^ƒ“ƒX‚ª“o˜^‚³‚ê‚½‚çAcallback‚ğŒÄ‚Ú‚¤I");
+        // T ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãŒå…ˆã« Regist ã•ã‚Œã¦ã„ã‚‹ã¨ã¯é™ã‚‰ãªã„
+        // Regist ã•ã‚ŒãŸã‚‰ callbackã‚’å‘¼ã¶ãƒ¡ã‚½ãƒƒãƒ‰ã‚’ä½œã‚ã†ï¼
+        throw new System.Exception("ä½™è£•ãŒã‚ã£ãŸã‚‰â‘  T ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãŒç™»éŒ²ã•ã‚ŒãŸã‚‰ã€callbackã‚’å‘¼ã¼ã†ï¼");
     }
 
     public async Task<T> GetInstanceAsync<T>()
     {
-        throw new System.Exception("—]—T‚ª‚ ‚Á‚½‚ç‡Aiö‹Æ‚Å‚â‚é‚±‚Æ‚ª–³‚¢l•Òj”ñ“¯ŠúŒn‚É‚µ‚æ‚¤");
+        throw new System.Exception("ä½™è£•ãŒã‚ã£ãŸã‚‰â‘¡ï¼ˆæˆæ¥­ã§ã‚„ã‚‹ã“ã¨ãŒç„¡ã„äººç·¨ï¼‰éåŒæœŸç³»ã«ã—ã‚ˆã†");
     }
 
     private static ServiceLocater _instance;
