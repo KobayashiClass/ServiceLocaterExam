@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -136,6 +136,7 @@ public class ServiceLocater
     
     }
 
+    // T型でインスタンスを登録する
     public void Regist<T>(T instance)
     {
         Cacher<T>.instance = instance;
@@ -146,6 +147,7 @@ public class ServiceLocater
         }
     }
 
+    // T型で登録されたインスタンスを返す。
     public T GetInstance<T>()
     {
         return Cacher<T>.instance;
