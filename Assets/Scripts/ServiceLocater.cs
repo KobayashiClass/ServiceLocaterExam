@@ -29,12 +29,12 @@ public class ServiceLocater
     {
         // T のインスタンスが先に Regist されているとは限らない
         // Regist されたら callbackを呼ぶメソッドを作ろう！
-        throw new System.Exception("余裕があったら① T インスタンスが登録されたら、callbackを呼ぼう！");
+        throw new System.Exception("余裕があったら① T インスタンスが登録されたら、callbackを呼ぼう！\n [Hint]: ラムダ式もキャッシュする必要があるのでフィールドやRegist<T>の処理を増やそう！");
     }
 
     public async Task<T> GetInstanceAsync<T>()
     {
-        throw new System.Exception("余裕があったら②（授業でやることが無い人編）非同期系にしよう");
+        throw new System.Exception("余裕があったら②（授業でやることが無い人編）非同期系にしよう！\n [Hint]: 非同期は難しい・・・調べよう！意外と数行で実装できるよ！");
     }
 
     // シングルトンのやつ
