@@ -31,12 +31,14 @@ public class ServiceLocater
 
     public void RequestInstance<T>(System.Action<T> callback)
     {
-        throw new Exception();
+        // T のインスタンスが先に Regist されているとは限らない
+        // Regist されたら callbackを呼ぶメソッドを作ろう！
+        throw new System.Exception("余裕があったら① T インスタンスが登録されたら、callbackを呼ぼう！\n [Hint]: ラムダ式もキャッシュする必要があるのでフィールドやRegist<T>の処理を増やそう！");
     }
 
     public async Task<T> GetInstanceAsync<T>()
     {
-        throw new Exception();
+        throw new System.Exception("余裕があったら②（授業でやることが無い人編）非同期系にしよう！\n [Hint]: 非同期は難しい・・・調べよう！意外と数行で実装できるよ！");
     }
 
 #elif !STEP1_STATICCACHE // 天才的なやり方　非常に高速
@@ -63,12 +65,14 @@ public class ServiceLocater
 
     public void RequestInstance<T>(System.Action<T> callback)
     {
-        throw new Exception();
+        // T のインスタンスが先に Regist されているとは限らない
+        // Regist されたら callbackを呼ぶメソッドを作ろう！
+        throw new System.Exception("余裕があったら① T インスタンスが登録されたら、callbackを呼ぼう！\n [Hint]: ラムダ式もキャッシュする必要があるのでフィールドやRegist<T>の処理を増やそう！");
     }
 
     public async Task<T> GetInstanceAsync<T>()
     {
-        throw new Exception();
+        throw new System.Exception("余裕があったら②（授業でやることが無い人編）非同期系にしよう！\n [Hint]: 非同期は難しい・・・調べよう！意外と数行で実装できるよ！");
     }
 
 #elif !ALLSTEP_DICTIONARY // 追加問題 Dictionary　実装例
