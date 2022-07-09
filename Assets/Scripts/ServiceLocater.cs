@@ -13,14 +13,16 @@ public class ServiceLocater
 
     }
 
+    // T型で登録されたインスタンスを返す。
     public void Regist<T>(T instance)
     {
         throw new System.Exception("型とインスタンスを登録しよう！");
     }
 
+    // T型で登録されたインスタンスを返す。
     public T GetInstance<T>()
     {
-        throw new System.Exception("型にあったインスタンスを返そう！無かったらnullを返そう！");
+        throw new System.Exception("型とマッチしたインスタンスを返そう！　今回はマッチしないケースは考えなくてよいです。");
     }
 
     public void RequestInstance<T>(System.Action<T> callback)
@@ -35,6 +37,7 @@ public class ServiceLocater
         throw new System.Exception("余裕があったら②（授業でやることが無い人編）非同期系にしよう");
     }
 
+    // シングルトンのやつ
     private static ServiceLocater _instance;
     public static ServiceLocater Instance => _instance ??= new ServiceLocater();
 }
