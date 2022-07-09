@@ -13,7 +13,7 @@ public class ServiceLocater
 
     }
 
-    // T型で登録されたインスタンスを返す。
+    // T型でインスタンスを登録する
     public void Regist<T>(T instance)
     {
         throw new System.Exception("型とインスタンスを登録しよう！");
